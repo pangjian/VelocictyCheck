@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Sms Template checker</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap3/dist/css/bootstrap.css" rel="stylesheet">
+     <link href="./velocity.css" rel="stylesheet">
+  </head>
+
+  <body>
+  <script id="tmpl" type="text/tmplate">#if($a=="Y")
+尊敬的$!{name}，您在$!{dateTime}使用银行卡$!{cardNumber}进行了#fmt_getMessage("Currency.type.${currency}")$!{amount}的中银快付交易。详询95566[中国银行]
+#else
+尊敬的$!{name}，您在$!{dateTime}使用银行卡$!{cardNumber}进行了#fmt_getMessage("Currency.type.${currency}")$!{amount}的中银快付交易。详询95566[中国银行]
+#end</script>
+
+
+    <div class="container">
+
+    <div class="hero-unit">
+
+      <h5>原模板</h5>
+      <textarea id="smsTmlBefore" class="input-xxlarge" rows="3" readonly></textarea>
+      <br>
+      <label id="smsTmlBeforeAsts"></label> 
+      <h5>修改后模板</h5>
+      <textarea id="smsTmlAfter"></textarea>
+      <br>
+      <label id="smsTmlAfterAsts"></label>
+      <br>
+      <button class="btn btn-lg btn-primary" onclick="checkTmpl();">Check</button>
+
+      </div>
+
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <script type="text/javascript" src="./jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./velocity.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
